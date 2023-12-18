@@ -1,9 +1,9 @@
 {
   "api_url" : "https://stream.cloudmu.id/api",
-  "title": "Suanten.com",
+  "title": "Cloudmu.id",
   "description" : "Live 24/7 Crypto Radio",
   "manifest" : {
-    "short_name": "Suanten.com",
+    "short_name": "Cloudmu.id",
     "orientation": "portrait",
     "display": "standalone",
     "start_url": "/?utm_source=pwa_homescreen",
@@ -17,15 +17,15 @@
   "showPlaylist" : true,
   "socialBtn" : true,
   "meta": {
-    "url" : "https://suanten.com",
-    "image" : "https://player.cryptoradio.fm/img/icon.png",
+    "url" : "https://cloudmu.id",
+    "image" : "https://cloudmu.id/img/icon.png",
     "locale" : "US_en"
   },
   "twitter" : {
-    "username" : "Suanten.com"
+    "username" : "Cloudmu.id"
   },
   "facebook" : {
-    "page_id" : "Suanten.com"
+    "page_id" : "Cloudmu.id"
   },
   "stationsFilterById": [6]
 }

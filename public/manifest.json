@@ -1,11 +1,11 @@
 {
-  "name": "Suanten.com",
-  "short_name": "Suanten.com",
+  "name": "Cloudmu.id",
+  "short_name": "Cloudmu.id",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": "/?utm_source=pwa_homescreen",
   "prompt_message": "Add a Home screen icon for easy access to our player",
-  "description": "Suanten Mobile Webplayer",
+  "description": "Cloudmu.id Mobile Webplayer",
   "background_color": "#222336",
   "theme_color": "#222336",
   "icons": [
