@@ -68,7 +68,7 @@ git clone https://github.com/oussamatn/radio-player.git
 ```
 
 #### config.json
-Renamed file inside `public/config-sample.json` to config.json and update you `config.json` API URL and radio name inside the configuration file :
+Renamed file inside `public/config-sample.json` to config.json and update your `config.json` API URL and radio name inside the configuration file :
 ``` JSON
 {
   "api_url" : "https://azuracast-backend-link.com/api",
