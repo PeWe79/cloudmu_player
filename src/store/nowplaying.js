@@ -1,7 +1,4 @@
 import nowplayingService from '@/services/nowplayingService';
-import {isError} from "vue-router/src/util/errors";
-//import { FETCH_FAVORITES, FETCH_TAGS } from './actionTypes';
-//import { SET_FAVORITES, SET_TAGS } from './mutationTypes';
 
 export const state = {
     stationId:0,

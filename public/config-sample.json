@@ -1,0 +1,32 @@
+{
+    "api_url" : "https://yourstream.com/api",
+    "title": "yourstream.com",
+    "description" : "Live 24/7 You Radio",
+    "manifest" : {
+      "short_name": "yourstream.com",
+      "orientation": "portrait",
+      "display": "standalone",
+      "start_url": "/?utm_source=pwa_homescreen",
+      "prompt_message": "Add a Home screen icon for easy access to our player",
+      "background_color": "#222336",
+      "theme_color": "#222336"
+    },
+    "player": {
+      "showLyrics": true
+    },
+    "showPlaylist" : true,
+    "socialBtn" : true,
+    "meta": {
+      "url" : "https://yourstream.com",
+      "image" : "https://yourstream.com/img/icon.png",
+      "locale" : "US_en"
+    },
+    "twitter" : {
+      "username" : "yourstream.com"
+    },
+    "facebook" : {
+      "page_id" : "yourstream.com"
+    },
+    "stationsFilterById": [6]
+  }
+  
