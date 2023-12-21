@@ -89,7 +89,7 @@ export const getters = {
             stations.push(state.nowplaying[s].station);
         }
         return stations;
-        },
+    },
 
 };
 

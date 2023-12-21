@@ -1,5 +1,3 @@
-
-
 export default {
     // api_url : "https://origin.cloudmu.id/?url=https://api.textyl.co/api/lyrics?q=",
     // serverTime :0,

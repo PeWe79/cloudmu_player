@@ -1,7 +1,4 @@
-// http://lyrics.kugou.com/search?ver=1&man=yes&client=pc&keyword=Balti%20Ya%20Hasra&duration=300
-
 import {decodeBase64, parseParam, stringeq} from "@/js/utils";
-
 
 export default {
     api_search: "https://origin.cloudmu.id/?url=http://lyrics.kugou.com/search",

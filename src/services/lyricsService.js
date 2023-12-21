@@ -1,6 +1,3 @@
-import axios from 'axios';
-import config from 'config';
-
 export default {
     api_url : "https://origin.cloudmu.id/?url=https://api.textyl.co/api/lyrics?q=",
     serverTime :0,
@@ -14,7 +11,6 @@ export default {
         if (response.ok) {
             console.log(response.headers.get('date'))
             this.serverTime = new Date().valueOf(response.headers.get('date'))
-
 
             const jsonValue = await response.json()
                 //.then((data)=>{
@@ -36,9 +32,6 @@ export default {
             temp.time = item.seconds * 1000
             output.push(temp)
         }
-
-
         return output;
     }
-
 }

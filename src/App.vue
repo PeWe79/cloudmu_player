@@ -49,8 +49,8 @@
                                      :key="c.station.id"
                                      :to="{ name: 'station',
                                             params: {
-                                                    id: c.station.id,
-                                                    shortcode : c.station.shortcode
+                                                id: c.station.id,
+                                                shortcode : c.station.shortcode
                                      }}"
 
                         >

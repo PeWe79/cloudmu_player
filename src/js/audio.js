@@ -23,7 +23,7 @@ export default {
         this._gain.connect(this._context.destination);
         // Wait for audio load buffer
         this._audio.addEventListener('canplaythrough', e => {
-                this.playAudio();
+            this.playAudio();
         });
         // Frequency Analyzer
         if (this._analyser ==null ) this._analyser = this._context.createAnalyser();
@@ -33,7 +33,7 @@ export default {
         if (this._context.state === 'suspended') this.unlockAudioContext(this._context);
         return this._audio;
     },
-// update and return analyser frequency data
+    // update and return analyser frequency data
     getFreqData() {
         if (this._analyser ==null ) return 1;
         this._analyser.getByteFrequencyData(this._freq);
@@ -67,7 +67,7 @@ export default {
             });
         }
     },
-// set audio volume
+    // set audio volume
     setVolume(volume) {
         if (!this._gain) return;
         volume = parseFloat(volume) || 0.0;
@@ -76,7 +76,7 @@ export default {
         this._gain.gain.value = volume;
     },
 
-// play audio source url
+    // play audio source url
     playSource(source) {
         this.stopAudio();
         this._audio.src = String(source || '');
@@ -84,7 +84,7 @@ export default {
         this._audio.load();
     },
 
-// stop playing audio
+    // stop playing audio
     stopAudio() {
         try {
             this._audio.pause(0);
