@@ -12,7 +12,8 @@ Vue.filter( 'toCommas', ( num, decimals ) => {
 
 // sanitize text data by only allowing alnums and some symbols
 Vue.filter( 'toText', ( str, def ) => {
-    str = String( str || '' ).replace( /[^\w\`\'\-\,\.\!\?]+/g, ' ' ).replace( /\s\s+/g, ' ' ).trim();
+    // str = String( str || '' ).replace( /[^\w\`\'\-\,\.\!\?]+/g, ' ' ).replace( /\s\s+/g, ' ' ).trim();
+    str = String( str || '' ).replace(/[^\w\`\'\-\,\.\!\?]+/g, ' ').replace(/\s\s+/g, ' ').trim();
     return str || String( def || '' );
 });
 // Limit text length by number of characters

@@ -50,7 +50,7 @@ export default {
 		visible: false,
 		playing: false,
 		loading: true,
-		volume: 0.5,
+		volume: 0.8,
 		// errors stuff
 		errors: {},
 		// timer stuff

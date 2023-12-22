@@ -65,7 +65,7 @@ export default {
 	},
 	data: () => {
 		return {
-			volume: 0.5,
+			volume: 0.8,
 			errors: {},
 			timeStart: 0,
 			timeDisplay: '00:00:00',
