@@ -8,11 +8,11 @@ import './registerServiceWorker'
 
 Vue.config.productionTip = !(process.env.NODE_ENV === 'production');
 new Vue({
-    router,
-    i18n,
-    render: h => h(App),
-    store,
-    mounted() {
+  router,
+  i18n,
+  render: h => h(App),
+  store,
+  mounted() {
 
-    }
+  }
 }).$mount('#app')
