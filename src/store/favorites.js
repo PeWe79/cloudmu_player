@@ -10,8 +10,8 @@ export const actions = {
 	},
 	toggleFavorite : ({ state, commit },stationId) => {
 
-		//if(state.favoritesList === undefined )
-		//     return commit("addFavorites", stationId);
+		//if(state.favoritesList === undefined)
+		// return commit("addFavorites", stationId);
 
 		let favs = state.favoritesList.slice().filter(fid => (fid === stationId));
 		if (!favs.length)

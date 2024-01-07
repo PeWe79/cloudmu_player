@@ -4,7 +4,7 @@
         <!-- app player container -->
         <main id="player-wrap" class="player-wrap" style="opacity: 0;" >
             <!-- bg absolute elements -->
-            <figure id="player-bg" class="player-bg" v-bind:style="{ 'background-image' : `url(  ${ getBackground} )` }"></figure>
+            <figure id="player-bg" class="player-bg" v-bind:style="{ 'background-image' : `url( ${ getBackground})` }"></figure>
             <audioVisualizations ></audioVisualizations>
             <!-- main player layout -->
             <section class="player-layout" v-if="init">
@@ -15,7 +15,7 @@
                         <span @click="navigate" @keypress.enter="navigate" role="link"> {{ config.title }}</span>
                       </router-link>
                     </h2>
-                    <button class="text-nowrap common-btn" id="sidebar" @click="toggleSidebar( true )"><i
+                    <button class="text-nowrap common-btn" id="sidebar" @click="toggleSidebar(true)"><i
                             class="fa fa-bars" aria-label="sidebar"></i></button>
                 </header>
                 <router-view ></router-view>
@@ -23,7 +23,7 @@
             <!-- player stations overlay + sidebar -->
             <section class="player-stations"
                      :class="{ 'visible': sidebar }"
-                     @click="toggleSidebar( false )"
+                     @click="toggleSidebar(false)"
                      v-if="channels"
             >
                 <aside class="player-stations-sidebar" @click.stop>
@@ -37,7 +37,7 @@
                                    v-on:input="debounceFilter"
                                    aria-label="search"/>
                         </div>
-                        <button class="common-btn" @click="toggleSidebar( false )"><i
+                        <button class="common-btn" @click="toggleSidebar(false)"><i
                                 class="fa fa-times-circle" aria-label="Closesidebar"></i>
                         </button>
                     </header>
@@ -55,7 +55,7 @@
 
                         >
                             <!--<figure id="player-bg" class="player-bg"
-                                    v-bind:style="{ 'background-image' : `url(  ${ c.now_playing.song.art } )` }">
+                                    v-bind:style="{ 'background-image' : `url( ${ c.now_playing.song.art })` }">
                             </figure>-->
                             <figure class="push-right ">
                                 <img class="img-round" width="70" height="70"
@@ -193,7 +193,7 @@
             },
             channels(stations){
                // console.log("watch : channels" , this.filteredStations);
-                if (Object.keys(this.filteredStations).length === 0 ) this.filteredStations = stations;
+                if (Object.keys(this.filteredStations).length === 0) this.filteredStations = stations;
             },
         },
         // on app destroyed
