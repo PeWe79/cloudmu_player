@@ -52,6 +52,7 @@
 <script>
 import animationSelection from '@/views/components/animationSelection'
 import _audio from '../../../js/audio';
+
 export default {
 	name: "footerPlayer",
 	components: {
@@ -93,7 +94,7 @@ export default {
 			if (this.volume + 0.1 > 1) return;
 			this.volume += 0.1
 		},
-		volumeDown(){
+		volumeDown() {
 			if (this.volume - 0.1 < 0) return;
 			this.volume -= 0.1
 		},
@@ -133,7 +134,3 @@ export default {
 	}
 }
 </script>
-
-<style scoped>
-
-</style>

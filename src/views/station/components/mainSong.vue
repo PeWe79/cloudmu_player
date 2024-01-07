@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
+import { mapState } from 'vuex';
 import favBtn from "@/views/components/favBtn";
 
 export default {
@@ -91,20 +91,16 @@ export default {
 			songs: state => state.songs,
 			//channels : state => state.stations, //errors
 		}),
-		config(){
+		config() {
 			return this.$store.getters["playerConfig/getConfig"];
 		},
 		hasNextSong() {
 			if (this.nextSong != null) return true;
 			return false;
 		},
-		twitterShare(){
+		twitterShare() {
 			return "https://twitter.com/share?text=" + this.$t('tw_listening_to') + this.currentsong.text + this.$t('live_on') + this.station.name + "&url=" + window.location.href ; // + "&hashtags=hashtag1,hashtag2,hashtag3"
 		}
 	}
 }
 </script>
-
-<style scoped>
-
-</style>

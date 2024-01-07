@@ -25,13 +25,11 @@
 </template>
 
 <script>
-
 import _audio from '../../js/audio';
 import favBtn from "@/views/components/favBtn";
 import syncLyrics from '@/views/station/components/syncLyrics'
 import footerPlayer from '@/views/station/components/footerPlayer'
-
-import {mapGetters, mapState} from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 import SongsHistory from "@/views/station/components/songsHistory";
 import MainSong from "@/views/station/components/mainSong";
 
@@ -158,16 +156,16 @@ export default {
 		setupAudio() {
 			const a = _audio.setupAudio();
 
-			a.addEventListener('waiting', e => {
+			a.addEventListener('waiting', () => {
 				this.playing = false;
 				this.loading = true;
 			});
-			a.addEventListener('playing', e => {
+			a.addEventListener('playing', () => {
 				this.setError('stream', '');
 				this.playing = true;
 				this.loading = false;
 			});
-			a.addEventListener('ended', e => {
+			a.addEventListener('ended', () => {
 				this.playing = false;
 				this.loading = false;
 			});

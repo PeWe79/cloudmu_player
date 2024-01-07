@@ -15,18 +15,18 @@ export default {
   // setup audio routing
   setupAudio() {
     console.log("setupAudio");
-    if (this._source ==null) this._source = this._context.createMediaElementSource(this._audio);
+    if (this._source == null) this._source = this._context.createMediaElementSource(this._audio);
 
     //Audio gain to manage volume
-    if (this._gain ==null) this._gain = this._context.createGain();
+    if (this._gain == null) this._gain = this._context.createGain();
     this._source.connect(this._gain);
     this._gain.connect(this._context.destination);
     // Wait for audio load buffer
-    this._audio.addEventListener('canplaythrough', e => {
+    this._audio.addEventListener('canplaythrough', () => {
         this.playAudio();
     });
     // Frequency Analyzer
-    if (this._analyser ==null) this._analyser = this._context.createAnalyser();
+    if (this._analyser == null) this._analyser = this._context.createAnalyser();
     this._source.connect(this._analyser);
 
     // Activate AudioContext on user event
@@ -35,7 +35,7 @@ export default {
   },
   // update and return analyser frequency data
   getFreqData() {
-    if (this._analyser ==null) return 1;
+    if (this._analyser == null) return 1;
     this._analyser.getByteFrequencyData(this._freq);
     return this._freq;
   },
@@ -53,7 +53,7 @@ export default {
       var events = ['touchstart', 'touchend', 'mousedown', 'keydown'];
       var unlock = function unlock() {
         console.log("audioContext state: " + audioCtx.state);
-        if (audioCtx.resume) audioCtx.resume().then(()=>{
+        if (audioCtx.resume) audioCtx.resume().then(() => {
           console.log("audioContext resume state: " + audioCtx.state);
           if (audioCtx.state !== 'suspended') {
             events.forEach(function (event) {
@@ -88,7 +88,6 @@ export default {
   stopAudio() {
     try {
       this._audio.pause(0);
-
     } catch (e) {
       console.log(e);
     }

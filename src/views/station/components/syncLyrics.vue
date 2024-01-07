@@ -43,28 +43,27 @@ export default {
 		async pullLyrics() {
 			this.currentSongId = this.song.id
 			this.activeLyric = 0;
-			//this.test = await kugou.getLyrics("Ava Max - Salt",180)
-			// this.test = await kugou.getLyrics(this.song.text,this.duration)
-			this.lyrics = await kugou.getLyrics(this.song.text,this.duration)
-			// this.lyrics = await lyricsService.getLyrics(this.song.text)
-			clearInterval(this.refreshHandler)
-			if (this.hasLyrics) this.setupLyricMaint()
+			// this.test = await kugou.getLyrics(this.song.text,this.duration);
+			this.lyrics = await kugou.getLyrics(this.song.text,this.duration);
+			// this.lyrics = await lyricsService.getLyrics(this.song.text);
+			clearInterval(this.refreshHandler);
+			if (this.hasLyrics) this.setupLyricMaint();
 		},
 		setupLyricMaint() {
-			this.elapsedtime = Math.round(new Date() - this.track.played_at * 1000)
-			console.log("elapsedtime=" + this.elapsedtime)
-			console.log("played_at=" + this.track.played_at)
+			this.elapsedtime = Math.round(new Date() - this.track.played_at * 1000);
+			// console.log("elapsedtime=" + this.elapsedtime);
+			// console.log("played_at=" + this.track.played_at);
 			this.searchForFirst();
-			this.refreshHandler = setInterval(this.searchForFirst, this.timer * 1000)
+			this.refreshHandler = setInterval(this.searchForFirst, this.timer * 1000);
 		},
 		searchForFirst() {
 			for (let i = this.activeLyric; i <= this.lyrics.length; i++) {
 				let item = this.lyrics[i];
 				if (item == null) break;
 				if (item.time >= this.elapsedtime) {
-				console.log(item.time + " - " + this.elapsedtime + " " + item.content)
-				this.activeLyric = i;
-				break;
+          // console.log(item.time + " - " + this.elapsedtime + " " + item.content);
+          this.activeLyric = i;
+          break;
 				}
 			}
 			this.elapsedtime =Math.round(new Date() - this.track.played_at * 1000)
@@ -74,12 +73,11 @@ export default {
 				this.activeLyric += 1;
 			}
 			this.elapsedtime =Math.round(new Date() - this.track.played_at * 1000)
-			//
 		},
 	},
 
 	mounted() {
-		console.log("mounted : syncLyrics")
+		// console.log("mounted : syncLyrics");
 		this.pullLyrics();
 	},
 	beforeDestroy() {
@@ -87,13 +85,9 @@ export default {
 	},
 	watch: {
 		song() {
-			console.log("watch song : pullLyrics()->" + this.song.title)
-			if (this.song.id !== this.currentSongId) this.pullLyrics()
+			// console.log("watch song : pullLyrics()->" + this.song.title);
+			if (this.song.id !== this.currentSongId) this.pullLyrics();
 		}
 	}
 }
 </script>
-
-<style scoped>
-
-</style>

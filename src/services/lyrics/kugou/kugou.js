@@ -13,11 +13,11 @@ export default {
       duration: duration
     })
 
-    console.log(url);
+    // console.log(url);
     const response = await fetch(url);
 
     if (response.ok) {
-      console.log(response.headers.get('date'));
+      // console.log(response.headers.get('date'));
       const {candidates} = await response.json();
       return Promise.resolve(candidates);
     } else {
@@ -33,10 +33,10 @@ export default {
         fmt: 'lrc',
         charset: 'utf8'
     })
-    console.log(url)
+    // console.log(url);
     const response = await fetch(url)
     if (response.ok) {
-      console.log(response.headers.get('date'));
+      // console.log(response.headers.get('date'));
       const jsonValue = await response.json();
       return Promise.resolve(jsonValue);
     } else {
@@ -51,8 +51,8 @@ export default {
     if (condidat) {
       let lyrics = await this.fetchLyrics(condidat.id, condidat.accesskey);
       let buf = decodeBase64(lyrics.content);
-      console.log(buf);
-      console.log(this._parseLyrics(buf));
+      // console.log(buf);
+      // console.log(this._parseLyrics(buf));
       return Promise.resolve(this._parseLyrics(buf));
     }
     return Promise.reject('Cannot get lyrics from kugou');

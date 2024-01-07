@@ -18,8 +18,8 @@ export const actions = {
     commit("setNowplayingStation", stationId);
   },
   async fetchNowplaying({ commit }, stationId) {
-    console.time("fetchNowplaying");
-    console.log("%c fetchNowplaying" , 'background: blue; color: white');
+    // console.time("fetchNowplaying");
+    // console.log("%c fetchNowplaying" , 'background: blue; color: white');
     let nowplaying = await nowplayingService.get();
     return new Promise((resolve, reject) => {
       try {
@@ -33,13 +33,13 @@ export const actions = {
   },
   async fetchStations({commit }) {
     console.time("fetchStations")
-    console.log("%c fetchStations" , 'background: blue; color: white')
+    // console.log("%c fetchStations" , 'background: blue; color: white')
     let Station = await nowplayingService.getChannels();
     commit("setStations",Station);
   },
   async fetchSongs({commit },stationId)  {
     console.time("fetchSongs")
-    console.log("%c fetchSongs" , 'background: blue; color: white')
+    // console.log("%c fetchSongs" , 'background: blue; color: white')
     let Songs = await nowplayingService.getSongs(stationId);
     return new Promise((resolve, reject) => {
       commit("setSongs",Songs);resolve();
@@ -60,7 +60,7 @@ export const getters = {
   },*/
   SongsByStation: (state) => {
     let stationid = state.stationId
-    console.log("getters : SongsByStation",stationid)
+    // console.log("getters : SongsByStation",stationid)
     return state.nowplaying.find((d) => (stationid) => (d.station.id === stationid)).songs;
   },
   getIDfromShortcode: (state) => (shortcode) =>{
@@ -72,7 +72,7 @@ export const getters = {
     return (!!Object.keys(state.songs).length);
   },
   getBackground: (state) => {
-    console.log(state.currentSong);
+    // console.log(state.currentSong);
     if(state.currentSong.song)
       return state.currentSong.song.art;
     else return "img/icon.png";
@@ -92,8 +92,8 @@ export const mutations = {
   },
   setNowplaying: (currentState, nowplaying) => {
     let stationId = currentState.stationId;
-    console.log("%c stationId :", 'background: green; color: white',stationId);
-    console.log("%c setNowplaying :", 'background: green; color: white',nowplaying);
+    // console.log("%c stationId :", 'background: green; color: white',stationId);
+    // console.log("%c setNowplaying :", 'background: green; color: white',nowplaying);
     console.timeEnd("fetchNowplaying");
     currentState.nowplaying = nowplaying;
     currentState.stations = nowplaying.map((s) => { return s.station });
@@ -102,7 +102,7 @@ export const mutations = {
     let nowplaying = currentState.nowplaying;
     if (!isNaN(stationId)) {
       let currentStation = nowplaying.find((d) => d.station.id === stationId);
-      console.log("%c setNowplayingStation : currentStation", 'background: green; color: white',currentStation);
+      // console.log("%c setNowplayingStation : currentStation", 'background: green; color: white',currentStation);
       currentState.currentStation = currentStation.station;
       currentState.currentSong = currentStation.now_playing;
       if(currentStation.playing_next != null)
@@ -111,15 +111,15 @@ export const mutations = {
     }
   },
   setStations: (currentState, Stations) => {
-    console.log("%c setStations :", 'background: green; color: white',Stations);
+    // console.log("%c setStations :", 'background: green; color: white',Stations);
     console.timeEnd("fetchStations")
     currentState.stations = Stations;
   },
   setSongs: (currentState, Songs) => {
-    console.log("%c setSongs :", 'background: green; color: white',Songs);
+    // console.log("%c setSongs :", 'background: green; color: white',Songs);
     console.timeEnd("fetchSongs");
     currentState.currentSong = Songs.now_playing;
-    console.log("%c setSongs : Songs.now_playing.song", 'background: blue; color: white',Songs.now_playing.song);
+    // console.log("%c setSongs : Songs.now_playing.song", 'background: blue; color: white',Songs.now_playing.song);
 
     currentState.songs = Songs;
   },

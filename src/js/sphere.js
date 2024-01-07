@@ -18,7 +18,7 @@ export default {
 		let radius   = 12;
 
 		for (let i = 0; i < points.length; i++) {
-			let { x, y, z } = points[ i ];
+			let { x, y, z } = points[i];
 			let home  = { x, y, z };
 			let cycle = THREE.Math.randInt(0, 100);
 			let pace  = THREE.Math.randInt(10, 30);
@@ -36,7 +36,7 @@ export default {
 
 	// animate sphere on frame loop
 	update(box, mouse, freq) {
-		let bass = (Math.floor(freq[ 1 ] | 0) / 255);
+		let bass = (Math.floor(freq[1] | 0) / 255);
 		let xoff = (box.width < 1080) ? 0 : 60;
 		let zoff = (box.width < 1080) ? -80 : 10;
 
@@ -47,7 +47,7 @@ export default {
 		this.group.rotation.y -= 0.003;
 
 		for (let i = 0; i < this.group.children.length; i++) {
-			let shape = this.group.children[ i ];
+			let shape = this.group.children[i];
 			let { radius, cycle, pace, home } = shape.userData;
 
 			shape.position.set(home.x, home.y, home.z);
